@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "80:8888"
+    command: python app/main.py
+    tty: true
+    environment:
+      PYTHONPATH: .
